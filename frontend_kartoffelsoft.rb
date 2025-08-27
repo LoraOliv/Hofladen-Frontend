@@ -79,7 +79,7 @@ class ArtikelauswahlApp < Gtk::Application
     box = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
     box.halign = :center
     box.valign = :center
-    icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Icons\gemuese.png')
+    icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\gemuese.png')
     label = Gtk::Label.new('Gemüse')
     box.add(icon)
     box.add(label)
@@ -91,7 +91,7 @@ class ArtikelauswahlApp < Gtk::Application
     box = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
     box.halign = :center
     box.valign = :center
-    icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Icons\obst.png')
+    icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\obst.png')
     label = Gtk::Label.new('Obst')
     box.add(icon)
     box.add(label)
@@ -113,46 +113,199 @@ class ArtikelauswahlApp < Gtk::Application
     # Tab "Kartoffeln" with a button inside
     content_kartoffeln = Gtk::Box.new(:vertical, 0)
 
-      btn_in_tab_kartoffeln = Gtk::Button.new
-      box = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
-      box.halign = :center
-      box.valign = :center
-      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Icons\potato.png')
-      label = Gtk::Label.new('Kartoffeln festkochend')
-      box.add(icon)
-      box.add(label)
-      btn_in_tab_kartoffeln.add(box)
-      btn_in_tab_kartoffeln.set_size_request(160, 130)
-      #fixed.put(btn_in_tab_kartoffeln, 45, 500)
+      grid = Gtk::Grid.new
+      grid.row_spacing = 15
+      grid.column_spacing = 15
 
-    content_kartoffeln.pack_start(btn_in_tab_kartoffeln, expand: false, fill: false, padding: 15)
+      spacer_label = Gtk::Label.new('')
+      spacer_label.set_size_request(5, 0)
+
+      grid.attach(spacer_label, 0, 0, 1, 1)
+
+      btn_in_tab_kartoffeln_1 = Gtk::Button.new
+      box_1 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_1.halign = :center
+      box_1.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\potato.png')
+      label = Gtk::Label.new('Kartoffeln festkochend')
+      box_1.add(icon)
+      box_1.add(label)
+      btn_in_tab_kartoffeln_1.add(box_1)
+      btn_in_tab_kartoffeln_1.set_size_request(160, 130)
+       
+      grid.attach(btn_in_tab_kartoffeln_1, 1, 0, 1, 1)
+
+      btn_in_tab_kartoffeln_2 = Gtk::Button.new
+      box_2 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_2.halign = :center
+      box_2.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\potato_2.png')
+      label = Gtk::Label.new('Kartoffeln mehlig')
+      box_2.add(icon)
+      box_2.add(label)
+      btn_in_tab_kartoffeln_2.add(box_2)
+      btn_in_tab_kartoffeln_2.set_size_request(160, 130)
+       
+      grid.attach(btn_in_tab_kartoffeln_2, 2, 0, 1, 1)
+
+
+    content_kartoffeln.pack_start(grid, expand: false, fill: false, padding: 15)
     notebook.append_page(content_kartoffeln, Gtk::Label.new('Kartoffeln'))
 
     # Tab "Karotten" with a button inside
-      content_karotten = Gtk::Box.new(:vertical, 0)
-      btn_in_tab_karotten = Gtk::Button.new
-      box = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
-      box.halign = :center
-      box.valign = :center
-      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Icons\carrot.png')
-      label = Gtk::Label.new('Karotten')
-      box.add(icon)
-      box.add(label)
-      btn_in_tab_karotten.add(box)
-      btn_in_tab_karotten.set_size_request(160, 130)
+    content_karotten = Gtk::Box.new(:vertical, 0)
 
-    content_karotten.pack_start(btn_in_tab_karotten, expand: false, fill: false, padding: 15)
+      grid = Gtk::Grid.new
+      grid.row_spacing = 15
+      grid.column_spacing = 15
+
+      spacer_label = Gtk::Label.new('')
+      spacer_label.set_size_request(5, 0)
+
+      grid.attach(spacer_label, 0, 0, 1, 1)
+
+      # Button "Karotten frisch geerntet"
+      btn_in_tab_karotten_1 = Gtk::Button.new
+      box_1 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_1.halign = :center
+      box_1.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\carrots_frisch.png')
+      label = Gtk::Label.new('Karotten frisch geerntet')
+      box_1.add(icon)
+      box_1.add(label)
+      btn_in_tab_karotten_1.add(box_1)
+      btn_in_tab_karotten_1.set_size_request(160, 130)
+
+      grid.attach(btn_in_tab_karotten_1, 1, 0, 1, 1)
+
+      # Button "Karotten bunt gemischt"
+      btn_in_tab_karotten_2 = Gtk::Button.new
+      box_2 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_2.halign = :center
+      box_2.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\carrots_bunt.png')
+      label = Gtk::Label.new('Karotten bunt gemischt')
+      box_2.add(icon)
+      box_2.add(label)
+      btn_in_tab_karotten_2.add(box_2)
+      btn_in_tab_karotten_2.set_size_request(160, 130)
+
+      grid.attach(btn_in_tab_karotten_2, 2, 0, 1, 1)
+
+    content_karotten.pack_start(grid, expand: false, fill: false, padding: 15)
     notebook.append_page(content_karotten, Gtk::Label.new('Karotten'))
-  
 
     # Tab "Zwiebeln" with a button inside
-    notebook.append_page(Gtk::Box.new(:vertical, 0), Gtk::Label.new('Zwiebeln'))
+    content_zwiebeln = Gtk::Box.new(:vertical, 0)
+
+      grid = Gtk::Grid.new
+      grid.row_spacing = 15
+      grid.column_spacing = 15
+
+      spacer_label = Gtk::Label.new('')
+      spacer_label.set_size_request(5, 0)
+
+      grid.attach(spacer_label, 0, 0, 1, 1)
+
+      # Button "Zwiebeln"
+      btn_in_tab_zwiebeln = Gtk::Button.new
+      box_1 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_1.halign = :center
+      box_1.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\onion.png')
+      label = Gtk::Label.new('Zwiebeln')
+      box_1.add(icon)
+      box_1.add(label)
+      btn_in_tab_zwiebeln.add(box_1)
+      btn_in_tab_zwiebeln.set_size_request(160, 130)
+
+      grid.attach(btn_in_tab_zwiebeln, 1, 0, 1, 1)
+
+    content_zwiebeln.pack_start(grid, expand: false, fill: false, padding: 15)
+    notebook.append_page(content_zwiebeln, Gtk::Label.new('Zwiebeln'))
 
     # Tab "Knoblauch" with a button inside
-    notebook.append_page(Gtk::Box.new(:vertical, 0), Gtk::Label.new('Knoblauch'))
+     content_knoblauch = Gtk::Box.new(:vertical, 0)
+
+      grid = Gtk::Grid.new
+      grid.row_spacing = 15
+      grid.column_spacing = 15
+
+      spacer_label = Gtk::Label.new('')
+      spacer_label.set_size_request(5, 0)
+
+      grid.attach(spacer_label, 0, 0, 1, 1)
+
+      # Button "Knoblauch"
+      btn_in_tab_knoblauch = Gtk::Button.new
+      box_1 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_1.halign = :center
+      box_1.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\garlic.png')
+      label = Gtk::Label.new('Knoblauch')
+      box_1.add(icon)
+      box_1.add(label)
+      btn_in_tab_knoblauch.add(box_1)
+      btn_in_tab_knoblauch.set_size_request(160, 130)
+
+      grid.attach(btn_in_tab_knoblauch, 1, 0, 1, 1)
+
+    content_knoblauch.pack_start(grid, expand: false, fill: false, padding: 15)
+    notebook.append_page(content_knoblauch, Gtk::Label.new('Knoblauch'))
 
     # Tab "Salate & Blattgemüse" with a button inside
-    notebook.append_page(Gtk::Box.new(:vertical, 0), Gtk::Label.new('Salate & Blattgemüse'))
+    content_salate = Gtk::Box.new(:vertical, 0)
+
+      grid = Gtk::Grid.new
+      grid.row_spacing = 15
+      grid.column_spacing = 15
+
+      spacer_label = Gtk::Label.new('')
+      spacer_label.set_size_request(5, 0)
+
+      grid.attach(spacer_label, 0, 0, 1, 1)
+
+      btn_in_tab_salat = Gtk::Button.new
+      box_1 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_1.halign = :center
+      box_1.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\salad.png')
+      label = Gtk::Label.new('Salat')
+      box_1.add(icon)
+      box_1.add(label)
+      btn_in_tab_salat.add(box_1)
+      btn_in_tab_salat.set_size_request(160, 130)
+       
+      grid.attach(btn_in_tab_salat, 1, 0, 1, 1)
+
+      btn_in_tab_rucola = Gtk::Button.new
+      box_2 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_2.halign = :center
+      box_2.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\arugula.png')
+      label = Gtk::Label.new('Rucola')
+      box_2.add(icon)
+      box_2.add(label)
+      btn_in_tab_rucola.add(box_2)
+      btn_in_tab_rucola.set_size_request(160, 130)
+       
+      grid.attach(btn_in_tab_rucola, 2, 0, 1, 1)
+
+      btn_in_tab_spinat = Gtk::Button.new
+      box_3 = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
+      box_3.halign = :center
+      box_3.valign = :center
+      icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\spinach.png')
+      label = Gtk::Label.new('Spinat')
+      box_3.add(icon)
+      box_3.add(label)
+      btn_in_tab_spinat.add(box_3)
+      btn_in_tab_spinat.set_size_request(160, 130)
+       
+      grid.attach(btn_in_tab_rucola, 3, 0, 1, 1)
+
+    content_salate.pack_start(grid, expand: false, fill: false, padding: 15)
+    notebook.append_page(content_salate, Gtk::Label.new('Salate & Blattgemüse'))
 
 
     #######################################################################################
@@ -205,7 +358,7 @@ class ArtikelauswahlApp < Gtk::Application
     box = Gtk::Box.new(Gtk::Orientation::VERTICAL, 5)
     box.halign = :center
     box.valign = :center
-    icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Icons\add-to-basket.png')
+    icon = Gtk::Image.new(file:'C:\Users\student\Desktop\Ruby\Hofladen-Frontend\Icons\add-to-basket.png')
     label = Gtk::Label.new('Artikel hinzufügen')
     box.add(icon)
     box.add(label)
